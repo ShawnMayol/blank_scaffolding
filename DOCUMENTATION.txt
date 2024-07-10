@@ -8,14 +8,9 @@
 
 2. Create Models and Controllers that may be used in checkout process in cmd
     php artisan make:model CartItem
-    php artisan make:model Category
     php artisan make:model Order
     php artisan make:model OrderDetail
-    php artisan make:model Payment
     php artisan make:model Product
-    php artisan make:model Promotion
-    php artisan make:model ShoppingCart
-    php artisan make:model User
 
     php artisan make:controller CheckoutController
 
