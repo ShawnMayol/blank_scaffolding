@@ -39,9 +39,12 @@
             <b-button type="button" @click="register" variant="primary">Sign up</b-button>
           </b-form>
         </div>
+
       </b-col>
       
-      <b-col></b-col>
+      <b-col>
+
+      </b-col>
   
     </b-row>
   </b-container>
@@ -64,14 +67,29 @@
   
         register() {
           axios.post('/register/registration',this.form).then(response=>{
-            console.log(response.data.email);
-            console.log(response.data.password);
+            // console.log(response.data);
+            if(response.data == null || response.data == ""){
+              console.log("you may proceed");
+            } else {
+              conslost.log("account exists");
+            }
           }).catch(error=>{
             console.log(error.data);
             this.loading = false;
           })
         }
   
+      },
+
+      get_accounts(){
+        axios.get('/get_accounts').then(response=>{
+          console.log(response.data);
+          this.accounts = response.data;
+        }).catch(error=>{
+          console.log(error.data);
+        })
       }
+
+
     }
   </script>

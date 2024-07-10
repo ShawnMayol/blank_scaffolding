@@ -92,6 +92,13 @@ class Registration extends Model
     }
     
     function create_account($user_credentials){
-        return $user_credentials;
+        return DB::table('user')
+        ->where('email', $user_credentials->email)
+        ->get();
+
+        // return DB::table('user')->insert([
+        //     'email' => $user_credentials->email,
+        //     'password' => $user_credentials->password
+        // ]);
     }
 }
