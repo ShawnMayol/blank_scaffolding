@@ -12,6 +12,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Picture</th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price Each</th>
@@ -21,6 +22,7 @@
             <tbody>
                 @foreach($cartItems as $item)
                     <tr>
+                        <td><img src="{{ $item->product->prodImageURL }}" alt="" style="width: 50px; height: auto;"></td>
                         <td>{{ $item->product->prodName }}</td>
                         <td>{{ $item->cartQuantity }}</td>
                         <td>{{ $item->cartPriceEach }}</td>
