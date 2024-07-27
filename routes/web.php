@@ -34,7 +34,10 @@ Route::get('/get_accounts', [LoginController::class, 'get_accounts']);
 
 // Checkout process
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+
 Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
+
 Route::get('/checkout/success', function () {
     return view('checkout.success');
 })->name('checkout.success');
+

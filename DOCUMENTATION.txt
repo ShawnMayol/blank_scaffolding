@@ -50,6 +50,15 @@ Notes:
 
     We found out that Laravel expects by default when using Eloquent models with timestamps tables 'orders' and 'order_details' must have columns 'updated_at' and 'created_at'. Thus adding these new columns will fix that problem.
 
+    ALTER TABLE `orders`
+    ADD COLUMN `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ADD COLUMN `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+    ALTER TABLE `order_details`
+    ADD COLUMN `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ADD COLUMN `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+
     After checking out, you can check the database if the 'order' and 'order_details' tables were properly populated.
 
     We inserted 10 dummy date into products table.

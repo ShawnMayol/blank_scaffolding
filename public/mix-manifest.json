@@ -1,4 +1,6 @@
 {
     "/js/login.js": "/js/login.js",
-    "/css/external_static.css": "/css/external_static.css"
+    "/js/app.js": "/js/app.js",
+    "/css/external_static.css": "/css/external_static.css",
+    "/css/app.css": "/css/app.css"
 }

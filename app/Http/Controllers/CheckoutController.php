@@ -16,6 +16,7 @@ class CheckoutController extends Controller
             return $item->cartQuantity * $item->cartPriceEach;
         });
 
+        // You might want to return a view here, or handle the response differently
         return view('checkout.index', compact('cartItems', 'totalAmount'));
     }
 
